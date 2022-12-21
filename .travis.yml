@@ -16,9 +16,7 @@ after_success:
   - docker build -t 0xcr/multi-nginx ./nginx
   - docker build -t 0xcr/multi-server ./server
   - docker build -t 0xcr/multi-worker ./worker
-  # login to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
-  # Push images to dockerhub
   - docker push 0xcr/multi-client
   - docker push 0xcr/multi-nginx
   - docker push 0xcr/multi-server
